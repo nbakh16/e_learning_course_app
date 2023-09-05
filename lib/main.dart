@@ -1,11 +1,14 @@
 import 'package:e_learning_course_app/app_blocs.dart';
 import 'package:e_learning_course_app/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const ELearningApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) => runApp(const ELearningApp()));
 }
 
 class ELearningApp extends StatelessWidget {
